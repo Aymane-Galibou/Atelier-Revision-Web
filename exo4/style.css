@@ -1,0 +1,195 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Conteneur pour centrer et donner un effet de carte */
+.table-container,.form-container {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 700px;
+}
+
+.table-title {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Style du Tableau */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Style des En-têtes (Titres) */
+.custom-table th {
+  background-color: #2980b9;
+  color: #ffffff;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Style des Lignes et Cellules */
+.custom-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eef2f5;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+/* Alternance de couleur pour les lignes (Zebra striping) */
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Effet visuel au survol de la souris */
+.custom-table tbody tr:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btnOp {
+    padding: 6px 20px; 
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.update{
+    background-color: rgba(241, 196, 15, 0.2); 
+    border: 1px solid #f1c40f; 
+    color: #d68910;
+}
+.delete{
+    background-color: rgba(241, 15, 15, 0.2); 
+    border: 1px solid #f10f0f; 
+    color: #d61010;
+}
+.update:hover {
+    background-color: #f1c40f; 
+    color: #ffffff; 
+    border-color: #f1c40f;
+}
+.delete:hover {
+    background-color: #f10f0f; 
+    color: #ffffff; 
+    border-color: #f10f0f;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+    box-sizing: border-box;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.input-group label{
+    color: #2c3e50;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.input-group input,select{
+    color: #2c3e50;
+    font-size: 1rem;
+    padding: 10px 14px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s;
+}
+.input-group input:focus,select:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+.hidden{
+  display: none !important;
+}
+
+.toast-notification {
+    position: fixed;
+    bottom: 20px; /* Aligné en bas */
+    right: 20px;  /* Aligné à droite */
+    background-color: #2ecc71; /* Vert succès */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    
+    /* Gestion de l'apparition en fondu */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(20px); 
+  }
+
+
+.toast-notification.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.search-container {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.search-title {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+.search-fields {
+    display: flex;
+    gap: 20px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice Moderne</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <h2 class="calculator-title">Calculateur Dynamique</h2>
+
+        <div class="input-group">
+            <input type="number" id="inputA" class="input-field" placeholder="Tapez le nombre a">
+            <input type="number" id="inputB" class="input-field" placeholder="Tapez le nombre b">
+        </div>
+
+        <div class="button-group">
+            <button onclick="calculate(1)" class="btn btn-add">Additionner</button>
+            <button onclick="calculate(2)" class="btn btn-mul">Multiplier</button>
+        </div>
+
+        <div id="resultats">
+            En attente de calcul...
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

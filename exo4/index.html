@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="search-container">
+      <h3 class="search-title">Filtrer les produits</h3>
+      <div class="search-fields">
+        <div class="input-group">
+          <label>Prix maximum</label>
+          <input
+            type="number"
+            id="searchPrix"
+            placeholder="Ex: 5000"
+            oninput="filtrerProduits()"
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Catégorie</label>
+          <select id="searchCategorie" onchange="filtrerProduits()">
+            <option value="">Toutes les catégories</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="table-container">
+      <h3 class="table-title">Tableau des Produits</h3>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th
+              onclick="trierParPrix()"
+              style="cursor: pointer; user-select: none"
+            >
+              Prix <span id="iconeTri">↕️</span>
+            </th>
+            <th>Categorie</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+
+    <div id="editFormContainer" class="form-container hidden">
+      <h3 class="table-title" style="color: #d68910">Modifier Le produit</h3>
+      <div class="form" style="border-color: #f1c40f">
+        <div class="input-group">
+          <label>ID (Non modifiable)</label>
+          <input id="editId" type="text" disabled />
+        </div>
+        <div class="input-group">
+          <label>Nouveau Nom</label>
+          <input id="editNom" type="text" />
+        </div>
+        <div class="input-group">
+          <label>Nouveau Prix</label>
+          <input id="editPrix" type="number" min="0" />
+        </div>
+        <div class="input-group">
+          <label for="editCategorie">Nouveau Catégorie</label>
+          <select name="categorie" id="editCategorie"></select>
+        </div>
+        <div style="display: flex; gap: 10px; width: 100%">
+          <button
+            onclick="sauvegarderModification()"
+            class="btn-submit"
+            style="background-color: #27ae60"
+          >
+            Sauvegarder
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <h3 class="table-title">Ajouter des Produits</h3>
+      <div class="form">
+        <div class="input-group">
+          <label for="inputId">ID</label>
+          <input
+            id="inputId"
+            placeholder="Tapez Id du Produit"
+            type="text"
+            name="id"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="inputNom">Nom</label>
+          <input
+            id="inputNom"
+            placeholder="Tapez Le Nom du Produit"
+            type="text"
+            name="nom"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="inputPrix">Prix</label>
+          <input
+            min="0"
+            id="inputPrix"
+            placeholder="Tapez Prix Produit"
+            type="number"
+            name="prix"
+          />
+        </div>
+        <div class="input-group">
+          <label for="inputCategorie">Catégorie</label>
+          <select name="categorie" id="inputCategorie"></select>
+        </div>
+
+        <button onclick="ajouterProduit()" class="btn-submit">Ajouter</button>
+      </div>
+    </div>
+
+    <div id="toast" class="toast-notification">Opération réussie !</div>
+  </body>
+  <script src="script.js"></script>
+</html>
