@@ -29,3 +29,4 @@ const calculate = (type) => {
         resultDiv.innerHTML = finalValue  
      }
 }
+

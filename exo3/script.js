@@ -54,46 +54,52 @@ const ajouterEtudiant=()=>{
             alert("Cet étudiant existe déjà (ID dupliqué) !")
             return 
         }
-
+        // recuperation des valeur des champs
         const nom=inputNom.value 
         const prenom = inputPrenom.value
+        // verification des valeurs 
         if(id.trim() === ""|| prenom.trim()==="" || nom.trim()===""){
             alert("Veuillez Remplire tous le champs");
             return;
         }
+        // instanciation d'une nouveau etudiant
         const nouvelEtudiant=new Etudiant(id,nom,prenom)
         console.log(nouvelEtudiant)
-
+        // ajoute d'etudiant au tableau
         etudiants.push(nouvelEtudiant);
 
+        // reafichage du tableau 
         initTableau()
-        // nettoyons la forme
+
+        // nettoyage de la forme
         inputId.value="";
         inputNom.value="";
         inputPrenom.value="";
     }
-
-
 }
 
 const chargerEtudiant = (id) => {
+    // pour charger les info d'etudiant sur la formulaire on doit d'abord verifier est ce qu'il existe
     const etudiant = etudiants.find((e) => String(e.id) === String(id))
 
+    // cas d'existence on remplit ses info dans la formulaire (experience d'utlisateur)
     if (etudiant) {
         document.getElementById("editId").value = etudiant.id
         document.getElementById("editNom").value = etudiant.nom
         document.getElementById("editPrenom").value = etudiant.prenom
         
         const editForm=document.getElementById("editFormContainer")
+        // on supprime la class hidden dedie a masquer la formulaire
         editForm.classList.remove("hidden")
     }
 }
 
 const sauvegarderModification=()=>{
+    // on recupere les nouveaux informations de l'etudiant
     const id = document.getElementById("editId").value;
     const nouveauNom = document.getElementById("editNom").value;
     const nouveauPrenom = document.getElementById("editPrenom").value;
-    
+    // verification des donnnes comme le cas d'ajout
     if (nouveauNom.trim() === "" || nouveauPrenom.trim() === "") {
         alert("Le nom et le prénom ne peuvent pas être vides !");
         return; 
@@ -102,26 +108,30 @@ const sauvegarderModification=()=>{
     // recuperation et affichage
     console.log({id,nouveauNom,nouveauPrenom})
 
-    // modification de tableau
+    // modification du tableau
     const index=etudiants.findIndex(e => String(e.id) === String(id))
     if(index !== -1){
         etudiants[index].nom=nouveauNom;
         etudiants[index].prenom=nouveauPrenom;
 
+    // reaffichage du tableau pour afficher les nouveau mis a jour
         initTableau();
         // cacher la formulaire 
         annulerEdition();
-
     }
 }
 
 const supprimerEtudiant=(id)=>{
+    // on cherche d'abord l'etudiant qu'on souhaite supprimer
     etudiants=etudiants.filter(e=>String(e.id) !== String(id))
 
+    // on doit verifier est ce que la formulaire de modification est ouvert
     const editIdField=document.getElementById("editId")
+    // pour eviter la modificatio et la suppression a la fois 
     if(editIdField && editIdField.value===String(id)){
         annulerEdition();
     }
+    // reaffichage du tableau pour afficher les nouveau mis a jour
     initTableau();
 
 }

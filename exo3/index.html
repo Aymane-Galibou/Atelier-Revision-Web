@@ -1,73 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestion Étudiants</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="table-container">
-        <h3 class="table-title">Tableau des étudiants</h3>
-        
-        <table class="custom-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Opération</th>
-                </tr>
-            </thead>
-            <tbody id="table-body"></tbody>
-        </table>
+      <h3 class="table-title">Tableau des étudiants</h3>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Opération</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
     </div>
 
     <div id="editFormContainer" class="form-container hidden">
-        <h3 class="table-title" style="color: #d68910;">Modifier l'étudiant</h3>
-        <div class="form" style="border-color: #f1c40f;">
-            <div class="input-group">
-                <label>ID (Non modifiable)</label>
-                <input id="editId" type="text" disabled>
-            </div>
-            <div class="input-group">
-                <label>Nouveau Nom</label>
-                <input id="editNom" type="text">
-            </div>
-            <div class="input-group">
-                <label>Nouveau Prénom</label>
-                <input id="editPrenom" type="text">
-            </div>
-            <div style="display: flex; gap: 10px; width: 100%;">
-                <button onclick="sauvegarderModification()" class="btn-submit" style="background-color: #27ae60;">Sauvegarder</button>
-            </div>
+      <h3 class="table-title" style="color: #d68910">Modifier l'étudiant</h3>
+      <div class="form" style="border-color: #f1c40f">
+        <div class="input-group">
+          <label>ID (Non modifiable)</label>
+          <input id="editId" type="text" disabled />
         </div>
+        <div class="input-group">
+          <label>Nouveau Nom</label>
+          <input id="editNom" type="text" />
+        </div>
+        <div class="input-group">
+          <label>Nouveau Prénom</label>
+          <input id="editPrenom" type="text" />
+        </div>
+        <div style="display: flex; gap: 10px; width: 100%">
+          <button onclick="sauvegarderModification()" class="btn-submit" style="background-color: #27ae60">
+            Sauvegarder
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="form-container">
-        <h3 class="table-title">Ajouter des étudiants</h3>
-        <div class="form">
-            <div class="input-group">
-                <label for="inputId">ID</label>
-                <input id="inputId" placeholder="Tapez Votre Id" type="text" name="id">
-            </div>
-
-            <div class="input-group">
-                <label for="inputNom">Nom</label>
-                <input id="inputNom" placeholder="Tapez Votre Nom" type="text" name="nom">
-            </div>
-
-            <div class="input-group">
-                <label for="inputPrenom">Prénom</label>
-                <input id="inputPrenom" placeholder="Tapez Votre Prenom" type="text" name="prenom">
-            </div>
-
-            <button onclick="ajouterEtudiant()" class="btn-submit">Ajouter</button>
+      <h3 class="table-title">Ajouter des étudiants</h3>
+      <div class="form">
+        <div class="input-group">
+          <label for="inputId">ID</label>
+          <input id="inputId" placeholder="Tapez Votre Id" type="text" name="id"/>
         </div>
+
+        <div class="input-group">
+          <label for="inputNom">Nom</label>
+          <input id="inputNom" placeholder="Tapez Votre Nom" type="text" name="nom"/>
+        </div>
+
+        <div class="input-group">
+          <label for="inputPrenom">Prénom</label>
+          <input id="inputPrenom" placeholder="Tapez Votre Prenom" type="text" name="prenom"/>
+        </div>
+        <button onclick="ajouterEtudiant()" class="btn-submit">Ajouter</button>
+      </div>
     </div>
 
-    
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

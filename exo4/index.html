@@ -12,14 +12,8 @@
       <div class="search-fields">
         <div class="input-group">
           <label>Prix maximum</label>
-          <input
-            type="number"
-            id="searchPrix"
-            placeholder="Ex: 5000"
-            oninput="filtrerProduits()"
-          />
+          <input type="number" id="searchPrix" placeholder="Ex: 5000" oninput="filtrerProduits()"/>
         </div>
-
         <div class="input-group">
           <label>Catégorie</label>
           <select id="searchCategorie" onchange="filtrerProduits()">
@@ -31,16 +25,12 @@
     
     <div class="table-container">
       <h3 class="table-title">Tableau des Produits</h3>
-
       <table class="custom-table">
         <thead>
           <tr>
             <th>ID</th>
             <th>Nom</th>
-            <th
-              onclick="trierParPrix()"
-              style="cursor: pointer; user-select: none"
-            >
+            <th onclick="trierParPrix()" style="cursor: pointer; user-select: none">
               Prix <span id="iconeTri">↕️</span>
             </th>
             <th>Categorie</th>
@@ -71,11 +61,7 @@
           <select name="categorie" id="editCategorie"></select>
         </div>
         <div style="display: flex; gap: 10px; width: 100%">
-          <button
-            onclick="sauvegarderModification()"
-            class="btn-submit"
-            style="background-color: #27ae60"
-          >
+          <button onclick="sauvegarderModification()" class="btn-submit" style="background-color: #27ae60">
             Sauvegarder
           </button>
         </div>
@@ -87,33 +73,18 @@
       <div class="form">
         <div class="input-group">
           <label for="inputId">ID</label>
-          <input
-            id="inputId"
-            placeholder="Tapez Id du Produit"
-            type="text"
-            name="id"
-          />
+          <input id="inputId" placeholder="Tapez Id du Produit" type="text" name="id"/>
         </div>
 
         <div class="input-group">
           <label for="inputNom">Nom</label>
-          <input
-            id="inputNom"
-            placeholder="Tapez Le Nom du Produit"
-            type="text"
-            name="nom"
+          <input id="inputNom" placeholder="Tapez Le Nom du Produit" type="text" name="nom"
           />
         </div>
 
         <div class="input-group">
           <label for="inputPrix">Prix</label>
-          <input
-            min="0"
-            id="inputPrix"
-            placeholder="Tapez Prix Produit"
-            type="number"
-            name="prix"
-          />
+          <input min="0" id="inputPrix" placeholder="Tapez Prix Produit" type="number" name="prix"/>
         </div>
         <div class="input-group">
           <label for="inputCategorie">Catégorie</label>

@@ -30,7 +30,6 @@ const initTableau = (listeAAfficher = produits) => {
                     <button onclick="chargerProduit('${prod.id}')" class="btnOp update">editer</button>
                     <button onclick="supprimerEtudiant('${prod.id}')" class="btnOp delete">Supprimer</button>
                     </td>
-                
                     </tr>`;
     });
 
@@ -156,6 +155,7 @@ const sauvegarderModification = () => {
     afficherMessageSucces("🎉 Le produit a bien été Modifié !");
   }
 };
+
 const supprimerEtudiant = (id) => {
   produits = produits.filter((e) => String(e.id) !== String(id));
 
@@ -166,6 +166,7 @@ const supprimerEtudiant = (id) => {
   initTableau();
   afficherMessageSucces("🎉 Le produit a bien été supprimé !");
 };
+
 const afficherMessageSucces = (message) => {
   const toast = document.getElementById("toast");
 
@@ -180,7 +181,6 @@ const afficherMessageSucces = (message) => {
     }, 3000);
   }
 };
-
 
 const trierParPrix = () => {
   triCroissant = !triCroissant;
@@ -214,6 +214,7 @@ const reglerIconeTri = () => {
     icone.textContent = triCroissant ? "🔼" : "🔽";
   }
 };
+
 const filtrerProduits = () => {
   const prixMax = document.getElementById("searchPrix").value;
   const categorieSelectionnee =
